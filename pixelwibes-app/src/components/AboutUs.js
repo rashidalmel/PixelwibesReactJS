@@ -13,21 +13,19 @@ const AboutUs = () => {
             <h2>About Us</h2>
             <h1>Creative Minds design the best apps and websites for the world</h1>
             <p>We ensure that our employees and clients grow alongside the company by fostering a great work-life culture within the industry.</p>
-          </div>
+          </div>          <div className="cards-container">
+            <div className="card experience-box">
+              <h2>5 Year Of Working Experience</h2>
+              <p>With the right people, experience, and drive, any business is destined for growth.</p>
+            </div>
 
-          <div className="experience-box">
-            <h2>5 Year Of Working Experience</h2>
-            <p>With the right people, experience, and drive, any business is destined for growth.</p>
-          </div>
-
-          <div className="vision-mission-container">
-            <div className="vision-box">
+            <div className="card vision-box">
               <img src="/visioncolor.png" alt="Our Vision" className="icon" />
               <h3>Our Vision</h3>
               <p>We paint a bright future for businesses operating in digital landscapes, and firmly believe in cultivating productive, long-term business relationships.</p>
             </div>
 
-            <div className="mission-box">
+            <div className="card mission-box">
               <img src="/mission.png" alt="Our Mission" className="icon" />
               <h3>Our Mission</h3>
               <p>We deliver contemporary and futuristic web and mobile software solutions to businesses ranging from startups to enterprises, providing affordability and satisfaction.</p>
