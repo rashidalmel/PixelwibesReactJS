@@ -18,16 +18,19 @@
   position: relative;
 }
 
-.about-image {
+.left-section {
   flex: 1;
   width: 100%;
-  max-width: 45vw;
-  position: absolute;
-  left: 0;
-  top: 0;
+  max-width: 55vw;  /* Increased from 45vw */
+  position: relative;
   z-index: 1;
+}
+
+.about-image {
+  position: relative;
+  width: 120%;  /* Increased from 100% */
+  overflow: visible;
   transform: translateX(-10vw);
-  overflow: hidden;
 }
 
 .about-image img {
@@ -41,10 +44,10 @@
 .about-text {
   flex: 1;
   margin-left: auto;
-  max-width: 55%;
+  max-width: 45%;  /* Decreased from 55% to balance the larger image */
   position: relative;
   z-index: 2;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
 .about-header {
@@ -53,7 +56,8 @@
 }
 
 .about-header h1 {
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(32px, 5vw, 40px);
+  font-weight: 600;
   background: linear-gradient(to right, #6c5ce7, #ff6b81);
   -webkit-background-clip: text;
   background-clip: text;
@@ -66,7 +70,7 @@
 .about-header h2 {
   color: #ff6b81;
   font-size: clamp(20px, 2.5vw, 24px);
-  margin-bottom: clamp(15px, 2vw, 20px);
+  margin-bottom: clamp(15px, 2vw, 8px);
 }
 
 .about-header p {
@@ -78,15 +82,7 @@
   margin: 0 auto;
 }
 
-.cards-container {
-  display: flex;
-  gap: 30px;
-  margin: 0 -100px 60px -300px;
-  position: relative;
-  z-index: 3;
-}
-
-.card {
+.experience-box {
   min-width: 300px;
   max-width: 300px;
   height: 250px;
@@ -95,6 +91,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: absolute;
+  bottom: 30px;
+  right: -50px;
+  z-index: 3;
 }
 
 .experience-box {
@@ -102,11 +102,11 @@
   color: white;
   text-align: left;
   border: 4px solid #1a1d2a;
-
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .experience-box h2 {
-  font-size: 24px;
+  font-size: clamp(20px, 2.5vw, 24px);
   margin-bottom: 15px;
   font-weight: 700;
   line-height: 1.2;
@@ -117,7 +117,7 @@
 }
 
 .experience-box h2 span {
-  font-size: 48px;
+  font-size: clamp(36px, 4vw, 48px);
   background: linear-gradient(to right, #ffffff, #f0f0f0);
   -webkit-background-clip: text;
   background-clip: text;
@@ -125,36 +125,49 @@
 }
 
 .experience-box p {
-  font-size: 16px;
+  font-size: clamp(14px, 1.8vw, 16px);
   opacity: 0.9;
   line-height: 1.6;
-  max-width: 400px;
+  max-width: clamp(200px, 30vw, 400px);
 }
 
-.vision-box, .mission-box {
-  backdrop-filter: blur(10px);
-  text-align: left;
-  border: 4px solid #1a1d2a;
+.vision-mission-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
 }
 
-.vision-box .icon, .mission-box .icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 12px;
-  margin-left: 0;
+.vision-box,
+.mission-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
 }
 
-.vision-box h3, .mission-box h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: white;
-  text-align: left;
+.vision-icon,
+.mission-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
-.vision-box p, .mission-box p {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
+.vision-box h2,
+.mission-box h2 {
+  font-size: clamp(20px, 2.5vw, 24px);
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.vision-box p,
+.mission-box p {
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: #fff;
+  opacity: 0.8;
   line-height: 1.6;
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
@@ -165,6 +178,14 @@
   
   .about-text {
     max-width: 50%;
+  }
+
+  .experience-box {
+    min-width: 250px;
+    max-width: 250px;
+    height: 220px;
+    right: -30px;
+    bottom: 20px;
   }
 }
 
@@ -203,26 +224,47 @@
     margin: 0;
     text-align: left;
   }
-
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0 20px;
+  .experience-box {
+    position: relative;
+    margin: 20px auto;
+    right: auto;
+    bottom: auto;
+    min-width: 100%;
+    height: auto;
+    padding: clamp(20px, 4vw, 30px);
   }
   
-  .card {
-    width: 100%;
-    max-width: 100%;
-    min-height: auto;
+  .experience-box h2 {
+    font-size: clamp(18px, 3vw, 20px);
   }
-
-  .experience-box {
+  
+  .experience-box h2 span {
+    font-size: clamp(32px, 5vw, 36px);
+  }
+  
+  .experience-box p {
+    font-size: clamp(14px, 2vw, 16px);
+    max-width: 100%;
+  }
+  
+  .left-section {
     display: none;
   }
+
+  .vision-mission-container {
+    flex-direction: column;
+    gap: 30px;
+  }
   
-  .vision-box, .mission-box {
-    min-height: 250px;
+  .vision-box,
+  .mission-box {
+    text-align: left;
+  }
+  
+  .vision-icon,
+  .mission-icon {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -241,5 +283,21 @@
     font-size: clamp(16px, 1.8vw, 16px);
     line-height: 1.5;
     /* padding: 0 0; */
+  }
+  
+  .experience-box {
+    padding: 20px;
+  }
+  
+  .experience-box h2 {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+  
+  .experience-box h2 span {
+    font-size: clamp(28px, 6vw, 32px);
+  }
+  
+  .experience-box p {
+    font-size: clamp(13px, 3vw, 14px);
   }
 }
