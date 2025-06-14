@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Header.css';
 import WhyUs from './components/WhyUs';
 import AboutUs from './components/AboutUs';
+import Services from './components/Services';
+import Testimonial from './components/Testimonial';
 
 function App() {
   const [companyDropdown] = useState([
@@ -154,6 +156,8 @@ function App() {
       </section>
       <WhyUs />
       <AboutUs />
+      <Services />
+      <Testimonial />
     </div>
   );
 }

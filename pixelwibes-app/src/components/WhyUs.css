@@ -17,25 +17,25 @@
   color: #355ab3;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
-  padding-left: 20px;
+  /* padding-left: 20px; */
 }
 
 .section-subtitle {
   display: block;
   text-align: left;
   color: #e85780;
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: 2px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
 }
 
 .section-description {
   text-align: left;
   color: #a0a0a0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   max-width: 600px;
-  margin: 0 0 32px 20px;
+  margin: 0 0 32px 0;
   line-height: 1.6;
   word-wrap: break-word;
 }
@@ -160,7 +160,6 @@
 
   .section-subtitle {
     font-size: 20px;
-    padding-left: 15px;
     letter-spacing: 1.5px;
   }
 
@@ -222,7 +221,7 @@
   }
 
   .section-subtitle {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .section-description {
